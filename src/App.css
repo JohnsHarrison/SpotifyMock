@@ -9,6 +9,7 @@ body{
 #SidePanel{
   color: #B2B2B2;
   background-color: black;
+  position: absolute;
   width: 190px;
   height: 100vh;
   padding: 15px;
@@ -61,3 +62,67 @@ flex-direction: column;
   margin-top: 16px;
 }
 
+
+#FriendActivity{
+  color: #B2B2B2;
+  background-color: #121212;
+  position: absolute;
+  right: 0;
+  height: 100vh;
+  width: 320px;
+}
+
+.FriendHeader{
+  margin: 30px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.FriendHeader span{
+  font-size: 14px;
+  margin: 6px 0px 0px 15px;
+  font-weight: bold;
+}
+
+.FriendContainer{
+  display: flex;
+  margin: 0px 30px 30px;
+}
+
+.FriendContainer img{
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.FriendInfo{
+  width: 70%;
+  margin-left: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Friend{
+  display: flex;
+  justify-content: space-between;
+}
+
+.FriendName{
+  max-width: 140px;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.SongContainer{
+  display: flex;
+  align-items: center;
+}
+
+.MusicEllipsis{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
