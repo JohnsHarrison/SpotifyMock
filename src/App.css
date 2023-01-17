@@ -6,13 +6,47 @@ body{
   font-family: 'Montserrat', sans-serif;
   overflow: hidden;
 }
+
+.App{
+  display: flex;
+  width: 100vw;
+}
+
+.HeaderContainer{
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  display: flex;
+  align-content: center;
+}
+
+.HeaderBackground{
+  width: 100%;
+  height: 100%;
+  background-color: #0E3A37 ;
+  position: relative;
+  top: 0;
+  opacity: 0;
+}
+
+.ImageContainer{
+  position: absolute;
+  width: 100%;
+  opacity: 1;
+  background-color: #0E3A37 ;
+}
+
+.BackgroundImage{
+  width: 100%;
+  opacity: 1;
+}
+
 #SidePanel{
   color: #B2B2B2;
   background-color: black;
-  position: absolute;
-  width: 190px;
+  width: 180px;
   height: 100vh;
-  padding: 15px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
 }
@@ -66,8 +100,6 @@ flex-direction: column;
 #FriendActivity{
   color: #B2B2B2;
   background-color: #121212;
-  position: absolute;
-  right: 0;
   height: 100vh;
   width: 320px;
 }
@@ -109,7 +141,7 @@ flex-direction: column;
 }
 
 .FriendName{
-  max-width: 140px;
+  max-width: 120px;
   font-weight: bold;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -126,3 +158,250 @@ flex-direction: column;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+.CenterBody{
+  background-color: #121212;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100vh;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* scrollbar for firefox */
+  scrollbar-color: #5A5A5A transparent;
+  position: relative;
+}
+
+
+/* ///// SCROLLBAR ///// */
+::-webkit-scrollbar {
+  width: 12px;
+  background:transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5A5A5A;
+}
+
+
+.CenterHeader{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+
+/* @media screen and (max-width: 2560px) {
+  .CenterHeader{
+    width: 70% ;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .CenterHeader{
+    width: 60% ;
+  }
+} */
+
+.NavButtons{
+  margin-left: 32px;
+}
+
+.NavButtons img{
+   margin-right: 16px;
+}
+
+.HeaderRight{
+  display: flex;
+  margin-right: 32px;
+}
+
+.HeaderRight img{
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  margin: 2px;
+}
+
+.HeaderRight button{
+  height: 32px;
+  width: 88px;
+  border-radius: 16px;
+  background-color: transparent;
+  border-color: white;
+  color: white;
+  border-width: 1px;
+  font-weight: 800;
+  margin-right: 32px;
+}
+
+.User{
+  display: flex;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 16px;
+  align-items: center;
+  height: 30px;
+  width: 160px;
+  color: white;
+  background-color: black;
+  opacity: 85%;
+}
+
+.User span{
+  margin-left: 5px;
+  font-weight: 600;
+  font-size: 14px
+}
+
+.Username{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 60%;
+}
+
+.ArtistName{
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-weight: bolder;
+  margin: 190px 0px 27px 40px;
+  position: relative;
+}
+
+.PopularContainer{
+  background-color: #121212;
+  height: 450px;
+  background-image: linear-gradient(#0E3A37 , #121212 40%);
+  padding-left: 32px;
+  position: relative;
+}
+
+.FollowButton{
+  height: 32px;
+  width: 91px;
+  border-width: 1px;
+  border-color: white;
+  background-color: transparent;
+  border-radius: 4px;
+  color: white;
+  font-weight: 800;
+  font-size: 12px;
+  margin-left: 32px;
+}
+
+.Song{
+  display: flex;
+  align-items: center;
+  color: #b2b2b2;
+  padding:8px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.CardContainer{
+margin-top: 30px;
+padding-left: 32px;
+}
+
+.ContainerHeader{
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+}
+
+.AlbumButtons{
+  margin: 20px 0px;
+}
+
+.AlbumButtons button{
+  height: 32px;
+  border-radius: 16px;
+  border: 0px;
+  padding: 8px 12px;
+  margin-right: 8px;
+}
+
+.Card{
+  height: 278px;
+  width: 200px;
+  border-radius: 5px;
+  background-color: #181818;
+  display: flex;
+  flex-direction: column;
+  margin-right: 24px;
+}
+
+.CardList{
+  display: flex;
+  overflow: hidden;
+}
+
+.About{
+  height: 515px;
+  width: 870px;
+  border-radius: 5px;
+  border-style: none;
+  background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, .8) ), url("https://www.progarchives.com/progressive_rock_discography_band/8868.JPG");
+  background-position:center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.AboutText{
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 75%;
+}
+
+.AboutClamp{
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  line-height: 1.4;
+  font-weight: 00;
+}
+
+.TourClamp{  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  line-height: 1.5;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.TourDate{
+  display: flex;
+  align-items: center;
+  margin: 10px 0px
+}
+
+.Date{
+  display: flex;
+  flex-direction: column;
+  height: 74px;
+  /* width: 72px; */
+  border: none;
+  border-radius: 3px;
+  color: white;
+  background-color: #2A2A2A;
+  text-align: center;
+  font-weight: 600;
+  justify-content: center;
+  padding: 0px 20px;
+  margin-right: 20px;
+}
+

@@ -1,5 +1,8 @@
 import './App.css';
 import Home from "./Assets/Home.svg"
+import Navigate from './Assets/Navigate.svg'
+import Play from './Assets/Play.svg'
+import Header from './Assets/Header.jpeg'
 import { useState,useEffect, useRef } from 'react';
 import { GetRandomUsers } from './API/RandomUser';
 import { GetMusic } from './API/GetMusic';
@@ -15,7 +18,22 @@ function App() {
       displayUsers()
       getTimes()
       displayMusic()
+
     }
+
+    // scrolling interaction
+    const image = document.body.getElementsByClassName("BackgroundImage")[0]
+    const center = document.body.getElementsByClassName("CenterBody")[0]
+    const header = document.body.getElementsByClassName("HeaderContainer")[0]
+    const background = document.body.getElementsByClassName("HeaderBackground")[0]
+    center.addEventListener("scroll", (event) => {
+      // fades the header image as the page scrolls down
+      image.style.opacity = 1 - center.scrollTop *.006;
+      // keeps the header bar fixed to the top of the screen
+      header.style.top =  `${center.scrollTop}px`;
+      // fades the header bar background color in as you scroll down 
+      background.style.opacity = 0 + center.scrollTop *.006;
+    });
        
   },[])
 
@@ -102,13 +120,384 @@ async function displayMusic(){
           <span>Driving Playlist</span>
           <span>90's Playlist</span>
         </div>
-      </div>  
+      </div>
+      <div className='CenterBody'> 
+      <div className='ImageContainer'>
+        <img className="BackgroundImage"src={Header} alt=""></img>
+      </div>
+        <div className='ArtistName'>
+          <span style={{"fontSize": "12px"}}>Verified Artist</span>
+          <span style={{"fontSize": "84px", "letterSpacing": "-4px"}}>Hail The Sun</span>
+          <span style={{"fontSize":"14px", "fontWeight": "600"}}>275,202 monthly listeners</span>
+        </div>
+        <div className='PopularContainer'>
+          <div style={{"display":"flex", "alignItems":"center", "margin":"24px 0px"}}>
+                <img src={Play} alt='Play'></img>
+                <button className='FollowButton'>FOLLOW</button>
+                <span style={{"color":"white", "fontSize": "18px", "fontWeight":"bold", "margin": "0px 0px 10px 32px"}}>. . .</span>
+          </div>
+          <div className='SongList'>
+              <span style={{"color": "white", "fontSize":"20px", "fontWeight":"800", "display":"block", "marginBottom":"15px"}}>Popular</span>
+              <div className='Song'>
+                <span style={{"marginLeft" : "16px"}}>1</span>
+                <div style={{"backgroundColor":"black", "height": "40px", "width": "40px", "margin": "0px 16px"}}></div>
+                <span style={{"width": "32%"}}>Rolling Out The Red Carpet</span>
+                <span style={{"fontWeight":"500", "fontSize":"14px", "width":"20%"}}>4,298,586</span>
+                <span style={{"fontWeight":"500", "fontSize":"14px"}}>2:05</span>
+              </div>
+              <div className='Song'>
+                <span style={{"marginLeft" : "16px"}}>2</span>
+                <div style={{"backgroundColor":"black", "height": "40px", "width": "40px", "margin": "0px 16px"}}></div>
+                <span style={{"width": "32%"}}>Human Target Practice</span>
+                <span style={{"fontWeight":"500", "fontSize":"14px", "width":"20%"}}>5,328,743</span>
+                <span style={{"fontWeight":"500", "fontSize":"14px"}}>3:54</span>
+              </div>
+              <div className='Song'>
+                <span style={{"marginLeft" : "16px"}}>3</span>
+                <div style={{"backgroundColor":"black", "height": "40px", "width": "40px", "margin": "0px 16px"}}></div>
+                <span style={{"width": "32%"}}>Relax / Divide</span>
+                <span style={{"fontWeight":"500", "fontSize":"14px", "width":"20%"}}>6,228,125</span>
+                <span style={{"fontWeight":"500", "fontSize":"14px"}}>3:18</span>
+              </div>
+              <div className='Song'>
+                <span style={{"marginLeft" : "16px"}}>4</span>
+                <div style={{"backgroundColor":"black", "height": "40px", "width": "40px", "margin": "0px 16px"}}></div>
+                <span style={{"width": "32%"}}>Made Your Mark</span>
+                <span style={{"fontWeight":"500", "fontSize":"14px", "width":"20%"}}>1,885,355</span>
+                <span style={{"fontWeight":"500", "fontSize":"14px"}}>2:45</span>
+              </div>
+              <div className='Song'>
+                <span style={{"marginLeft" : "16px"}}>5</span>
+                <div style={{"backgroundColor":"black", "height": "40px", "width": "40px", "margin": "0px 16px"}}></div>
+                <span style={{"width": "32%"}}>Mind Rider</span>
+                <span style={{"fontWeight":"500", "fontSize":"14px", "width":"20%"}}>101,697</span>
+                <span style={{"fontWeight":"500", "fontSize":"14px"}}>3:21</span>
+              </div>
+              <span style={{"color": "#b2b2b2", "fontSize":"12px", "fontWeight":"700", "letterSpacing":"1px", "display":"block", "marginTop":"12px"}}>SEE MORE</span>
+          </div>
+        </div>
+        {/* Discography */}
+        <div className='CardContainer'>
+          <div className='ContainerHeader'>
+            <span style={{"color": "white", "fontSize":"20px", "fontWeight": "800"}}>Discography </span>
+            <span  style={{"color": "#b2b2b2", "fontSize":"12px", "fontWeight":"700", "letterSpacing":"1px"}}>SHOW ALL</span>
+          </div>
+          <div className='AlbumButtons'>
+            <button>Popular Releases</button>
+            <button style={{"backgroundColor":"#232323", "fontWeight": "600", "color": "white"}}>Albums</button>
+            <button style={{"backgroundColor":"#232323", "fontWeight": "600", "color": "white"}}>Albums and EPs</button>
+          </div>
+          <div className='CardList'>
+            <div className='Card'>
+              <div style={{"margin":"0px 16px"}}>
+                 {/* Replace with image */}
+                <div style={{"backgroundColor":"black", "height":"168px", "width":"168px", "borderRadius": "5px", "margin": "16px 0px"}}></div>
+                <span>Album Name</span>
+                <div>
+                  <span>Latest Release</span>
+                  <span>.</span>
+                  <span>Single</span>
+                </div>
+              </div>
+            </div>
+            <div className='Card'>
+              <div style={{"margin":"0px 16px"}}>
+                 {/* Replace with image */}
+                <div style={{"backgroundColor":"black", "height":"168px", "width":"168px", "borderRadius": "5px", "margin": "16px 0px"}}></div>
+                <span>Album Name</span>
+                <div>
+                  <span>Latest Release</span>
+                  <span>.</span>
+                  <span>Single</span>
+                </div>
+              </div>
+            </div>
+            <div className='Card'>
+              <div style={{"margin":"0px 16px"}}>
+                 {/* Replace with image */}
+                <div style={{"backgroundColor":"black", "height":"168px", "width":"168px", "borderRadius": "5px", "margin": "16px 0px"}}></div>
+                <span>Album Name</span>
+                <div>
+                  <span>Latest Release</span>
+                  <span>.</span>
+                  <span>Single</span>
+                </div>
+              </div>
+            </div>
+            <div className='Card'>
+              <div style={{"margin":"0px 16px"}}>
+                 {/* Replace with image */}
+                <div style={{"backgroundColor":"black", "height":"168px", "width":"168px", "borderRadius": "5px", "margin": "16px 0px"}}></div>
+                <span>Album Name</span>
+                <div>
+                  <span>Latest Release</span>
+                  <span>.</span>
+                  <span>Single</span>
+                </div>
+              </div>
+            </div>
+            <div className='Card'>
+              <div style={{"margin":"0px 16px"}}>
+                 {/* Replace with image */}
+                <div style={{"backgroundColor":"black", "height":"168px", "width":"168px", "borderRadius": "5px", "margin": "16px 0px"}}></div>
+                <span>Album Name</span>
+                <div>
+                  <span>Latest Release</span>
+                  <span>.</span>
+                  <span>Single</span>
+                </div>
+              </div>
+            </div>
+            <div className='Card'>
+              <div style={{"margin":"0px 16px"}}>
+                 {/* Replace with image */}
+                <div style={{"backgroundColor":"black", "height":"168px", "width":"168px", "borderRadius": "5px", "margin": "16px 0px"}}></div>
+                <span>Album Name</span>
+                <div>
+                  <span>Latest Release</span>
+                  <span>.</span>
+                  <span>Single</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        {/* Features */}
+        <div className='CardContainer'>
+        <span style={{"display":"block","color": "white", "fontSize":"20px", "fontWeight": "800","marginBottom":"20px"}}>Featuring Hail The Sun</span>
+        <div style={{"display":"flex"}}>
+        <div className='Card'>
+              <div style={{"margin":"0px 16px"}}>
+                 {/* Replace with image */}
+                <div style={{"backgroundColor":"black", "height":"168px", "width":"168px", "borderRadius": "5px", "margin": "16px 0px"}}></div>
+                <span>Album Name</span>
+                <div>
+                  <span>Latest Release</span>
+                  <span>.</span>
+                  <span>Single</span>
+                </div>
+              </div>
+            </div>
+            <div className='Card'>
+              <div style={{"margin":"0px 16px"}}>
+                 {/* Replace with image */}
+                <div style={{"backgroundColor":"black", "height":"168px", "width":"168px", "borderRadius": "5px", "margin": "16px 0px"}}></div>
+                <span>Album Name</span>
+                <div>
+                  <span>Latest Release</span>
+                  <span>.</span>
+                  <span>Single</span>
+                </div>
+              </div>
+            </div>
+            <div className='Card'>
+              <div style={{"margin":"0px 16px"}}>
+                 {/* Replace with image */}
+                <div style={{"backgroundColor":"black", "height":"168px", "width":"168px", "borderRadius": "5px", "margin": "16px 0px"}}></div>
+                <span>Album Name</span>
+                <div>
+                  <span>Latest Release</span>
+                  <span>.</span>
+                  <span>Single</span>
+                </div>
+              </div>
+            </div>
+            <div className='Card'>
+              <div style={{"margin":"0px 16px"}}>
+                 {/* Replace with image */}
+                <div style={{"backgroundColor":"black", "height":"168px", "width":"168px", "borderRadius": "5px", "margin": "16px 0px"}}></div>
+                <span>Album Name</span>
+                <div>
+                  <span>Latest Release</span>
+                  <span>.</span>
+                  <span>Single</span>
+                </div>
+              </div>
+            </div>
+        </div>
+        </div>
+        {/* Fans also like */}
+        <div className='CardContainer'>
+        <div className='ContainerHeader' style={{"marginBottom":"20px"}}>
+            <span style={{"color": "white", "fontSize":"20px", "fontWeight": "800"}}>Fans also like </span>
+            <span  style={{"color": "#b2b2b2", "fontSize":"12px", "fontWeight":"700", "letterSpacing":"1px"}}>SHOW ALL</span>
+          </div>
+          <div style={{"display":"flex"}}>
+          <div className='Card'>
+              <div style={{"margin":"0px 16px"}}>
+                 {/* Replace with image */}
+                <div style={{"backgroundColor":"black", "height":"168px", "width":"168px", "borderRadius": "5px", "margin": "16px 0px"}}></div>
+                <span>Album Name</span>
+                <div>
+                  <span>Latest Release</span>
+                  <span>.</span>
+                  <span>Single</span>
+                </div>
+              </div>
+            </div>
+            <div className='Card'>
+              <div style={{"margin":"0px 16px"}}>
+                 {/* Replace with image */}
+                <div style={{"backgroundColor":"black", "height":"168px", "width":"168px", "borderRadius": "5px", "margin": "16px 0px"}}></div>
+                <span>Album Name</span>
+                <div>
+                  <span>Latest Release</span>
+                  <span>.</span>
+                  <span>Single</span>
+                </div>
+              </div>
+            </div>
+            <div className='Card'>
+              <div style={{"margin":"0px 16px"}}>
+                 {/* Replace with image */}
+                <div style={{"backgroundColor":"black", "height":"168px", "width":"168px", "borderRadius": "5px", "margin": "16px 0px"}}></div>
+                <span>Album Name</span>
+                <div>
+                  <span>Latest Release</span>
+                  <span>.</span>
+                  <span>Single</span>
+                </div>
+              </div>
+            </div>
+            <div className='Card'>
+              <div style={{"margin":"0px 16px"}}>
+                 {/* Replace with image */}
+                <div style={{"backgroundColor":"black", "height":"168px", "width":"168px", "borderRadius": "5px", "margin": "16px 0px"}}></div>
+                <span>Album Name</span>
+                <div>
+                  <span>Latest Release</span>
+                  <span>.</span>
+                  <span>Single</span>
+                </div>
+              </div>
+            </div>
+            <div className='Card'>
+              <div style={{"margin":"0px 16px"}}>
+                 {/* Replace with image */}
+                <div style={{"backgroundColor":"black", "height":"168px", "width":"168px", "borderRadius": "5px", "margin": "16px 0px"}}></div>
+                <span>Album Name</span>
+                <div>
+                  <span>Latest Release</span>
+                  <span>.</span>
+                  <span>Single</span>
+                </div>
+              </div>
+            </div>
+            <div className='Card'>
+              <div style={{"margin":"0px 16px"}}>
+                 {/* Replace with image */}
+                <div style={{"backgroundColor":"black", "height":"168px", "width":"168px", "borderRadius": "5px", "margin": "16px 0px"}}></div>
+                <span>Album Name</span>
+                <div>
+                  <span>Latest Release</span>
+                  <span>.</span>
+                  <span>Single</span>
+                </div>
+              </div>
+            </div>
+        </div>
+        </div>
+        {/* About / Tour */}
+        <div style={{"display":"flex", "margin":"40px 0px", "paddingLeft":"32px"}}>
+          <div style={{"display":"flex", "flexDirection":"column"}}>
+          <span style={{"color": "white", "fontSize":"20px", "fontWeight": "800", "display":"block", "marginBottom":"5px"}}>About</span>
+          <div className='About'>
+            <div className='AboutText'>
+              <span style={{"fontWeight":"600", "fontSize":"15px", "display":"block", "marginBottom":"10px"}}>349,911 monthly listeners</span>
+              <span className='AboutClamp'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+            </div>
+          </div>
+          </div>
+          <div style={{"display":"flex", "flexDirection":"column", "marginLeft":"30px"}}>
+            <span style={{"color": "white", "fontSize":"24px", "fontWeight": "800", "display":"block", "marginBottom":"5px"}}>On tour</span>
+              <div className='TourDate'>
+                <div className='Date'>
+                  <span>JAN</span>
+                  <span style={{"fontSize":"24px"}}>20</span>
+                </div>
+                <div style={{"display":"flex","flexDirection":"column", "color":"white"}}>
+                  <span className='TourClamp'>The Sound Of Animals Fighting with Hail The Sun and Concrete Castles</span>
+                  <div style={{"fontSize":"14px", "fontWeight": "500"}}>
+                  <span>Fri 6:00 PM</span>
+                  <span style={{"fontWeight": "900","margin":"0px 5px 5px"}}>.</span>
+                  <span>The Palladium, Worcester</span>
+                </div>
+                </div>
+              </div>
+              <div className='TourDate'>
+                <div className='Date'>
+                  <span>JAN</span>
+                  <span style={{"fontSize":"24px"}}>21</span>
+                </div>
+                <div style={{"display":"flex","flexDirection":"column", "color":"white"}}>
+                  <span className='TourClamp'>The Sound Of Animals Fighting</span>
+                  <div style={{"fontSize":"14px", "fontWeight": "500"}}>
+                  <span>Sat 6:30 PM</span>
+                  <span style={{"fontWeight": "900","margin":"0px 5px 5px"}}>.</span>
+                  <span>Webster Hall, New York</span>
+                </div>
+                </div>
+              </div>
+              <div className='TourDate'>
+                <div className='Date'>
+                  <span>JAN</span>
+                  <span style={{"fontSize":"24px"}}>22</span>
+                </div>
+                <div style={{"display":"flex","flexDirection":"column", "color":"white"}}>
+                  <span className='TourClamp'>The Sound Of Animals Fighting</span>
+                  <div style={{"fontSize":"14px", "fontWeight": "500"}}>
+                  <span>Sun 8:00 PM</span>
+                  <span style={{"fontWeight": "900","margin":"0px 5px 5px"}}>.</span>
+                  <span>Franklin Music Hall, Philadelphia</span>
+                </div>
+                </div>
+              </div>
+              <div className='TourDate'>
+                <div className='Date'>
+                  <span>JAN</span>
+                  <span style={{"fontSize":"24px"}}>24</span>
+                </div>
+                <div style={{"display":"flex","flexDirection":"column", "color":"white"}}>
+                  <span className='TourClamp'>Hail The Sun at The Canal Club</span>
+                  <div style={{"fontSize":"14px", "fontWeight": "500"}}>
+                  <span>Tue 6:30 PM</span>
+                  <span style={{"fontWeight": "900","margin":"0px 5px 5px"}}>.</span>
+                  <span>The Canal Club, Richmond</span>
+                </div>
+                </div>
+              </div>
+              <span style={{"color":"white", "fontWeight":"700","letterSpacing":"1px", "fontSize":"14px","marginTop":"10px"}}>SEE ALL</span>
+          </div>
+        </div>
+        <div className='HeaderContainer'>
+        <div className='HeaderBackground'></div> 
+        <div className='CenterHeader'>
+            <div className='NavButtons'>
+              <img src={Navigate} alt="Back"></img>
+              <img style={{"transform": "scaleX(-1)"}} src={Navigate} alt="Forward"></img>
+            </div>
+            <div className='HeaderRight'>
+              <button>Upgrade</button>
+                {  
+                  Users ?(
+                  <div className="User">
+                    <img src={Users[0].picture.thumbnail} alt="User"></img>
+                    <div className='Username'>
+                    <span>{Users[0].name.first} {Users[0].name.last}</span>
+                    </div>
+                  </div> 
+                  ): null
+                }   
+            </div>
+        </div>   
+        </div>
+      </div>
       <div id='FriendActivity'>
         <div className='FriendHeader'>
             <span>Friend Activity</span>
             <img src={Home} alt="Add"></img>
         </div>
-        {/* {Users} */}
         {
           Users && Music ? (
           <div className='FriendList'>
@@ -192,7 +581,7 @@ async function displayMusic(){
           ) : null
         }
         
-      </div>
+      </div>   
     </div>
   );
 }
