@@ -1,5 +1,10 @@
 import './App.css';
 import Home from "./Assets/Home.svg"
+import Search from "./Assets/Search.svg"
+import Library from "./Assets/Library.svg"
+import Create from "./Assets/Create.svg"
+import Liked from "./Assets/Liked.svg"
+import AddFriend from "./Assets/AddFriend.svg"
 import Navigate from './Assets/Navigate.svg'
 import Play from './Assets/Play.svg'
 import Header from './Assets/Header.jpeg'
@@ -94,21 +99,21 @@ async function displayMusic(){
               <span>Home</span>
             </div>
             <div className='NavElement'>
-              <img src={Home} alt="Search"></img>
+              <img src={Search} alt="Search"></img>
               <span>Search</span>
             </div>
             <div className='NavElement'>
-              <img src={Home} alt="Your Library"></img>
+              <img src={Library} alt="Your Library"></img>
               <span>Your Library</span>
             </div>
           </div>
           <div className='SideTop'>
             <div className='NavElement'>
-              <img src={Home} alt="Home"></img>
+              <img src={Create} alt="Home"></img>
               <span>Create Playlist</span>
             </div>
             <div className='NavElement'>
-              <img src={Home} alt="Home"></img>
+              <img src={Liked} alt="Home"></img>
               <span>Liked Songs</span>
             </div>
           </div>
@@ -496,7 +501,7 @@ async function displayMusic(){
       <div id='FriendActivity'>
         <div className='FriendHeader'>
             <span>Friend Activity</span>
-            <img src={Home} alt="Add"></img>
+            <img src={AddFriend} alt="Add"></img>
         </div>
         {
           Users && Music ? (
