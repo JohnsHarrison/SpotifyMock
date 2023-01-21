@@ -405,3 +405,60 @@ padding-left: 32px;
   margin-right: 20px;
 }
 
+
+
+/* Audio Player */
+
+
+.MusicPlayer{
+  display: flex;
+  bottom: 0;
+  padding: 18px 15px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #181818;
+  color: #B1B1B1;
+  position: absolute;
+  left: 0;
+  width: 99vw;
+}
+
+.Song{
+  display: flex;
+  align-items: center
+}
+
+.Audio{
+  display: flex;
+  width: 40%;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 12px;
+  font-weight: 500;
+  align-items: center;
+}
+
+.Progress{
+  /* --bar-bg: #ffe3d4; */
+  --seek-before-width: 0;
+  /* --seek-before-color: #ffc2a1; */
+  /* --knobby: #3452a5;
+  --selectedKnobby: #26c9c3; */
+  width: 40vw;
+}
+
+.PlayerButtons{
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+}
+
+.Volume {
+  display: flex;
+  align-items: center;
+}
+
+.Volume img{
+  margin-left: 16px;
+}
