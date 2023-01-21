@@ -421,7 +421,11 @@ padding-left: 32px;
   color: #B1B1B1;
   position: absolute;
   left: 0;
-  width: 99vw;
+  box-sizing: border-box;
+  height: 90px;
+  border-top: #282828;
+  border-top-width: 2px;
+  border-top-style: solid;
 }
 
 .Song{
