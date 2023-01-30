@@ -113,7 +113,7 @@ async function displayMusic(){
               </div>  
             </div>     
             <div className='NavElement'>
-              <img src={Home} alt="Home"></img>
+              <img className='Icon' src={Home} alt="Home"></img>
               <span>Home</span>
             </div>
             <div className='NavElement'>
@@ -150,7 +150,7 @@ async function displayMusic(){
       </div>
         <div className='ArtistName'>
           <span style={{"fontSize": "12px"}}>Verified Artist</span>
-          <span style={{"fontSize": "84px", "letterSpacing": "-4px"}}>Hail The Sun</span>
+          <span className='ArtistNameText'>Hail The Sun</span>
           <span style={{"fontSize":"14px", "fontWeight": "600"}}>275,202 monthly listeners</span>
         </div>
         <div className='PopularContainer'>
@@ -211,7 +211,7 @@ async function displayMusic(){
             <button style={{"backgroundColor":"#232323", "fontWeight": "600", "color": "white"}}>Albums and EPs</button>
           </div>
           <div className='CardList'>
-            <div className='Card'>
+            <div id='Card' className='Card1'>
               <div style={{"margin":"0px 16px"}}>
                 <img src={MindRider} alt="" style={{"boxShadow":"2px 3px 20px black", "height":"168px", "width":"168px", "borderRadius": "5px", "margin": "16px 0px"}}></img>
                 <span style={{"color": "white", "fontSize":"15px","fontWeight":"700"}}>Mind Rider</span>
@@ -222,7 +222,7 @@ async function displayMusic(){
                 </div>
               </div>
             </div>
-            <div className='Card'>
+            <div id='Card' className='Card2'>
             <div style={{"margin":"0px 16px"}}>
                 <img src={Wake} alt="" style={{"boxShadow":"2px 3px 20px black", "height":"168px", "width":"168px", "borderRadius": "5px", "margin": "16px 0px"}}></img>
                 <span style={{"color": "white", "fontSize":"15px","fontWeight":"700"}}>Wake</span>
@@ -233,7 +233,7 @@ async function displayMusic(){
                 </div>
               </div>
             </div>
-            <div className='Card'>
+            <div id='Card' className='Card3'>
             <div style={{"margin":"0px 16px"}}>
                 <img src={NewAgeFilth} alt="" style={{"boxShadow":"2px 3px 20px black", "height":"168px", "width":"168px", "borderRadius": "5px", "margin": "16px 0px"}}></img>
                 <span style={{"color": "white", "fontSize":"15px","fontWeight":"700"}}>New Age Filth</span>
@@ -244,7 +244,7 @@ async function displayMusic(){
                 </div>
               </div>
             </div>
-            <div className='Card'>
+            <div id='Card' className='Card4'>
             <div style={{"margin":"0px 16px"}}>
                 <img src={MentalKnife} alt="" style={{"boxShadow":"2px 3px 20px black", "height":"168px", "width":"168px", "borderRadius": "5px", "margin": "16px 0px"}}></img>
                 <span style={{"color": "white", "fontSize":"15px","fontWeight":"700"}}>Mental Knife</span>
@@ -255,7 +255,7 @@ async function displayMusic(){
                 </div>
               </div>
             </div>
-            <div className='Card'>
+            <div id='Card' className='Card5'>
             <div style={{"margin":"0px 16px"}}>
                 <img src={CultureScars} alt="" style={{"boxShadow":"2px 3px 20px black", "height":"168px", "width":"168px", "borderRadius": "5px", "margin": "16px 0px"}}></img>
                 <span style={{"color": "white", "fontSize":"15px","fontWeight":"700"}}>Culture Scars</span>
@@ -266,7 +266,7 @@ async function displayMusic(){
                 </div>
               </div>
             </div>
-            <div className='Card'>
+            <div id='Card' className='Card6'>
             <div style={{"margin":"0px 16px"}}>
                 <img src={Elephantitis} alt="" style={{"boxShadow":"2px 3px 20px black", "height":"168px", "width":"168px", "borderRadius": "5px", "margin": "16px 0px"}}></img>
                 <span style={{"color": "white", "fontSize":"15px","fontWeight":"700"}}>Elephantitis</span>
@@ -283,8 +283,8 @@ async function displayMusic(){
         {/* Features */}
         <div className='CardContainer'>
         <span style={{"display":"block","color": "white", "fontSize":"20px", "fontWeight": "800","marginBottom":"20px"}}>Featuring Hail The Sun</span>
-        <div style={{"display":"flex"}}>
-        <div className='Card'>
+        <div className='FeaturesList'>
+        <div id='Card'>
         <div style={{"margin":"0px 16px"}}>
                 <img src={ThisIs} alt="" style={{"boxShadow":"2px 3px 20px black", "height":"168px", "width":"168px", "borderRadius": "5px", "margin": "16px 0px"}}></img>
                 <span style={{"color": "white", "fontSize":"15px","fontWeight":"700"}}>This Is Hail The Sun</span>
@@ -293,7 +293,7 @@ async function displayMusic(){
                 </div>
               </div>
             </div>
-            <div className='Card'>
+            <div id='Card'>
             <div style={{"margin":"0px 16px"}}>
                 <img src={Radio} alt="" style={{"boxShadow":"2px 3px 20px black", "height":"168px", "width":"168px", "borderRadius": "5px", "margin": "16px 0px"}}></img>
                 <span style={{"color": "white", "fontSize":"15px","fontWeight":"700"}}>Hail The Sun Radio</span>
@@ -302,7 +302,7 @@ async function displayMusic(){
                 </div>
               </div>
             </div>
-            <div className='Card'>
+            <div id='Card' className='Card3'>
             <div style={{"margin":"0px 16px"}}>
                 <img src={Prog} alt="" style={{"boxShadow":"2px 3px 20px black", "height":"168px", "width":"168px", "borderRadius": "5px", "margin": "16px 0px"}}></img>
                 <span style={{"color": "white", "fontSize":"15px","fontWeight":"700"}}>Progressive Metal</span>
@@ -319,55 +319,55 @@ async function displayMusic(){
             <span style={{"color": "white", "fontSize":"20px", "fontWeight": "800"}}>Fans also like </span>
             <span  style={{"color": "#b2b2b2", "fontSize":"12px", "fontWeight":"700", "letterSpacing":"1px"}}>SHOW ALL</span>
           </div>
-          <div style={{"display":"flex"}}>
-          <div className='Card'>
+          <div className='CardList'>
+          <div id='Card' className='Card1'>
               <div style={{"margin":"0px 16px"}}>
-                <img src={Tides} alt="" style={{"boxShadow":"2px 3px 20px black","height":"168px", "width":"168px", "borderRadius": "50%", "margin": "16px 0px"}}></img>
+                <img className='CardImage' src={Tides} alt="" ></img>
                 <span style={{"color": "white", "fontSize":"15px","fontWeight":"700"}}>Tides Of Man</span>
                 <div style={{"color":"#b2b2b2","fontSize": "12px", "marginTop": "8px", "display":"flex", "alignItems":"center","fontWeight": "500"}}>
                   <span>Artist</span>
                 </div>
               </div>
             </div>
-            <div className='Card'>
+            <div id='Card' className='Card2'>
             <div style={{"margin":"0px 16px"}}>
-                <img src={Dwellings} alt="" style={{"boxShadow":"2px 3px 20px black","height":"168px", "width":"168px", "borderRadius": "50%", "margin": "16px 0px"}}></img>
+                <img className='CardImage' src={Dwellings} alt=""></img>
                 <span style={{"color": "white", "fontSize":"15px","fontWeight":"700"}}>Dwellings</span>
                 <div style={{"color":"#b2b2b2","fontSize": "12px", "marginTop": "8px", "display":"flex", "alignItems":"center","fontWeight": "500"}}>
                   <span>Artist</span>
                 </div>
               </div>
             </div>
-            <div className='Card'>
+            <div id='Card' className='Card3'>
             <div style={{"margin":"0px 16px"}}>
-                <img src={Royal} alt="" style={{"boxShadow":"2px 3px 20px black","height":"168px", "width":"168px", "borderRadius": "50%", "margin": "16px 0px"}}></img>
+                <img className='CardImage' src={Royal} alt=""></img>
                 <span style={{"color": "white", "fontSize":"15px","fontWeight":"700"}}>Royal Coda</span>
                 <div style={{"color":"#b2b2b2","fontSize": "12px", "marginTop": "8px", "display":"flex", "alignItems":"center","fontWeight": "500"}}>
                   <span>Artist</span>
                 </div>
               </div>
             </div>
-            <div className='Card'>
+            <div id='Card' className='Card4'>
             <div style={{"margin":"0px 16px"}}>
-                <img src={ALLB} alt="" style={{"boxShadow":"2px 3px 20px black","height":"168px", "width":"168px", "borderRadius": "50%", "margin": "16px 0px"}}></img>
+                <img className='CardImage' src={ALLB} alt=""></img>
                 <span style={{"color": "white", "fontSize":"15px","fontWeight":"700"}}>A Lot Like Birds</span>
                 <div style={{"color":"#b2b2b2","fontSize": "12px", "marginTop": "8px", "display":"flex", "alignItems":"center","fontWeight": "500"}}>
                   <span>Artist</span>
                 </div>
               </div>
             </div>
-            <div className='Card'>
+            <div id='Card' className='Card5'>
             <div style={{"margin":"0px 16px"}}>
-                <img src={Sianvar} alt="" style={{"boxShadow":"2px 3px 20px black","height":"168px", "width":"168px", "borderRadius": "50%", "margin": "16px 0px"}}></img>
+                <img className='CardImage' src={Sianvar} alt=""></img>
                 <span style={{"color": "white", "fontSize":"15px","fontWeight":"700"}}>Sianvar</span>
                 <div style={{"color":"#b2b2b2","fontSize": "12px", "marginTop": "8px", "display":"flex", "alignItems":"center","fontWeight": "500"}}>
                   <span>Artist</span>
                 </div>
               </div>
             </div>
-            <div className='Card'>
+            <div id='Card' className='Card6'>
             <div style={{"margin":"0px 16px"}}>
-                <img src={Wolf} alt="" style={{"boxShadow":"2px 3px 20px black","height":"168px", "width":"168px", "borderRadius": "50%", "margin": "16px 0px"}}></img>
+                <img className='CardImage' src={Wolf} alt=""></img>
                 <span style={{"color": "white", "fontSize":"15px","fontWeight":"700"}}>Wolf & Bear</span>
                 <div style={{"color":"#b2b2b2","fontSize": "12px", "marginTop": "8px", "display":"flex", "alignItems":"center","fontWeight": "500"}}>
                   <span>Artist</span>
@@ -378,7 +378,7 @@ async function displayMusic(){
         </div>
         {/* About / Tour */}
         <div style={{"display":"flex", "margin":"40px 0px 200px 0px", "paddingLeft":"32px"}}>
-          <div style={{"display":"flex", "flexDirection":"column"}}>
+          <div className='AboutContainer'>
           <span style={{"color": "white", "fontSize":"20px", "fontWeight": "800", "display":"block", "marginBottom":"5px"}}>About</span>
           <div className='About'>
             <div className='AboutText'>
