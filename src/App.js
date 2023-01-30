@@ -470,9 +470,7 @@ async function displayMusic(){
             </div>
         </div>   
         </div>
-      </div>
-
-      
+      </div> 
       <div id='FriendActivity'>
         <div className='FriendHeader'>
             <span>Friend Activity</span>
